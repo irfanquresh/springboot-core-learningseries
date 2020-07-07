@@ -49,4 +49,17 @@ public class EmployeeServiceAdvImpl implements EmployeeService {
 		theRepository.deleteById(theId);
 	}
 
+	@Override
+	public List<Employee> searchBy(String theName) {
+
+		List<Employee> results = null;
+
+		if (theName != null && (theName.trim().length() > 0)) {
+			results = theRepository.findByFirstNameContainsOrLastNameContainsAllIgnoreCase(theName, theName);
+		} else {
+			results = findAll();
+		}
+
+		return results;
+	}
 }

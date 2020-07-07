@@ -45,4 +45,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		theDAO.deleteById(theId);
 	}
 
+	@Override
+	public List<Employee> searchBy(String theName) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
