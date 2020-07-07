@@ -23,7 +23,8 @@ public class EmployeeServiceAdvImpl implements EmployeeService {
 
 	@Override
 	public List<Employee> findAll() {
-		return theRepository.findAll();
+		// return theRepository.findAll();
+		return theRepository.findAllByOrderByLastNameAsc();
 	}
 
 	@Override
